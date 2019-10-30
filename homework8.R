@@ -27,6 +27,17 @@ factor.indices <- vapply(gapminder, is.factor, TRUE)
 
 
 
+# Creating character vectors of  gapminder dataset
+
+numeric.indices <- vapply(gapminder, is.numeric, TRUE) 
+
+numeric.columns <- axis_vars[numeric.indices] # selecting the numeric indices
+
+factor.columns <- axis_vars[factor.indices]   # selecting the factor indices
+
+
+
+
 
 
 
