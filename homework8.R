@@ -11,3 +11,8 @@ library(shiny)
 library(tidyverse)
 library(gapminder)
 
+
+# Setting range of population growth 
+
+min.pop <- min(gapminder$pop)
+max.pop <- max(gapminder$pop)
