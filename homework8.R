@@ -16,3 +16,7 @@ library(gapminder)
 
 min.pop <- min(gapminder$pop)
 max.pop <- max(gapminder$pop)
+
+
+# Setting axis variables
+axis_vars <- names(gapminder)
