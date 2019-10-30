@@ -87,7 +87,17 @@ ui <- fluidPage(
 )
 
 
-
+# Defining server logic 
+server <- function(input, output) {
+  
+  # Filtering gapminder dataset based on population (pop) 
+  
+  filt_gap <- reactive ({
+    gapminder %>%
+      filter(pop >= min(input$pop_range)) %>%
+      filter(pop <= max(input$pop_range))
+  })
+  
 
 
 
