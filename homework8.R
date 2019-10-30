@@ -106,6 +106,13 @@ server <- function(input, output) {
       geom_point()
   })
   
+  
+  # Creating diagnostic output window 
+  output$diagnostic <- renderText(
+    input$pop_range
+  )
+  
+  
 
 
 
