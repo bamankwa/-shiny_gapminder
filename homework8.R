@@ -121,6 +121,11 @@ server <- function(input, output) {
   
 }
 
+# Running the application 
+shinyApp(ui = ui, server = server)
+
+
+
   
 
 
