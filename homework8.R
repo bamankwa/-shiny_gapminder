@@ -36,6 +36,61 @@ numeric.columns <- axis_vars[numeric.indices] # selecting the numeric indices
 factor.columns <- axis_vars[factor.indices]   # selecting the factor indices
 
 
+####   UI defined
+
+ui <- fluidPage(
+  
+  # Application title
+  titlePanel("Effect of Population Growth"),
+  
+  # Sidebar with a slider input for number of bins 
+  sidebarLayout(
+    sidebarPanel(
+      
+      # Creating slider with range
+      sliderInput("pop_range",
+                  "Range of population",
+                  min = min.pop,
+                  max = max.pop,
+                  value = c(min.pop, max.pop)),
+      
+      
+      # Selecting  x and y variables
+      selectInput(inputId = "xvar",
+                  label = "X axis",
+                  choices = axis_vars,
+                  selected = "gdpPercap"),
+      
+      selectInput(inputId = "yvar",
+                  label = "Y axis",
+                  choices = axis_vars,
+                  selected = "lifeExp"),
+      
+      # Defining colour of datapoints
+      selectInput(inputId = "continent",
+                  label = "Color", 
+                  choices = factor.columns,
+                  selected = "continent"),
+      
+      
+      # seting action button
+      actionButton("go", 
+                   "Go!",
+                   icon = icon("adjust")) 
+    ),
+    
+    # Setting of Output to be plotted
+    mainPanel(
+      plotOutput("gapminder_plot")
+    )
+  )
+)
+
+
+
+
+
+
 
 
 
