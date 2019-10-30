@@ -97,6 +97,14 @@ server <- function(input, output) {
       filter(pop >= min(input$pop_range)) %>%
       filter(pop <= max(input$pop_range))
   })
+
+  
+  # Making the plot
+  
+  p_gap <- eventReactive(input$go, {
+    ggplot(filt_gap(), aes_string(x = input$xvar, y = input$yvar, colour = input$continent)) + 
+      geom_point()
+  })
   
 
 
