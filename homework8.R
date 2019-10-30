@@ -20,3 +20,15 @@ max.pop <- max(gapminder$pop)
 
 # Setting axis variables
 axis_vars <- names(gapminder)
+
+
+# Creating character vectors of  gapminder dataset 
+factor.indices <- vapply(gapminder, is.factor, TRUE)
+
+
+
+
+
+
+
+
