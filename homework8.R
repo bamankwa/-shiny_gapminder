@@ -113,6 +113,15 @@ server <- function(input, output) {
   )
   
   
+  # Creating a dynamic ggplot plot
+  
+  output$gapminder_plot <- renderPlot(
+    p_gap()
+  )
+  
+}
+
+  
 
 
 
