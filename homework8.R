@@ -72,6 +72,9 @@ ui <- fluidPage(
                   choices = factor.columns,
                   selected = "continent"),
       
+      #Adding the option of customizing the plot title
+      textInput(inputId = "title",
+                label = "Plot Title"),
       
       # seting action button
       actionButton("go", 
@@ -103,7 +106,7 @@ server <- function(input, output) {
   
   p_gap <- eventReactive(input$go, {
     ggplot(filt_gap(), aes_string(x = input$xvar, y = input$yvar, colour = input$continent)) + 
-      geom_point()
+      geom_point() + ggtitle(input$title)
   })
   
   
